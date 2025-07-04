@@ -100,8 +100,45 @@ This solution is designed to run in a serverless, event-driven architecture usin
 
 ### 🔍 Architecture Description
 
-<!-- INSERT HERE: Description of the architecture shown in AWS-architecture.png -->
+## ✅ Cloud Deployment Architecture Explanation
 
+### 🔹 1. Document Ingestion
+- **S3 (Raw Excel Upload)** handles incoming Excel files.
+- **S3 Event Trigger** starts the pipeline immediately after a file is uploaded.
+
+### 🔹 2. Parallel Extraction and Enrichment
+- **Lambda (Parse & Cleanse)** reads and parses the Excel.
+- **Step Functions** orchestrate batch or row-wise enrichment.
+- **Lambda (Enrich Row)** enriches each franchise record using your Python logic.
+
+### 🔹 3. Quality Control / Exception Handling
+- **DLQ (Dead-Letter Queue)** stores failed records.
+- **SNS Alert & Subscribers** send failure notifications (Email, SMS, Slack, etc.).
+- **Automated remediation** is a placeholder for future auto-fixes or re-runs.
+- **CloudWatch Logs** capture logs from all services.
+
+### 🔹 4. Storage and Access (Dashboards & Alerts)
+- **S3 (Processed)** stores enriched data.
+- **Athena & Redshift** allow querying.
+- **QuickSight** can visualize dashboards from Athena or Redshift.
+- **SNS Alerts** notify stakeholders when things go wrong.
+
+---
+
+### 🟡 Note: GCP-Based Equivalent
+
+This architecture can also be adapted for **Google Cloud Platform (GCP)** using:
+- **Cloud Storage** instead of S3 for file ingestion.
+- **Cloud Functions** instead of AWS Lambda.
+- **Cloud Composer or Workflows** instead of Step Functions.
+- **BigQuery** instead of Redshift/Athena.
+- **Looker Studio (formerly Data Studio)** instead of QuickSight.
+- **Cloud Logging and Cloud Monitoring** instead of CloudWatch.
+- **Pub/Sub with DLQs and Alerting Policies** for failure handling.
+
+The overall flow remains the same—modular, parallelizable, and fault-tolerant.
+
+"""
 ---
 
 ## ✅ Why This Setup?
