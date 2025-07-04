@@ -149,6 +149,13 @@ The overall flow remains the same—modular, parallelizable, and fault-tolerant.
 
 ---
 
+### 📄 Sample Input
+
+This project assumes input in the form of an Excel file extracted from Franchise Disclosure Documents (FDDs) or similar sources.
+
+- Sample file: `Golden Chick_DE_Takehome.xlsx` (included in this repo)
+- For reference: [FTC Franchise Database](https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/franchise-rule)
+
 ## 🧪 Notes
 
 - Each request to Serper API is rate-limited using `time.sleep(1)` to stay within free-tier limits.
