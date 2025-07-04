@@ -96,7 +96,7 @@ This solution is designed to run in a serverless, event-driven architecture usin
 
 ### 🔽 Architecture Diagram
 
-![AWS Architecture](AWS-architecture.png)
+![AWS Architecture](AWS-Architecture.png)
 
 ### 🔍 Architecture Description
 
