@@ -138,7 +138,6 @@ This architecture can also be adapted for **Google Cloud Platform (GCP)** using:
 
 The overall flow remains the same—modular, parallelizable, and fault-tolerant.
 
-"""
 ---
 
 ## ✅ Why This Setup?
